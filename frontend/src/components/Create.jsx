@@ -1,5 +1,7 @@
 import { React, useState, useEffect } from "react";
 import AxiosInstance from "./Axios";
+import { Box, Typography } from "@mui/material";
+import AddBoxIcon from "@mui/icons-material/AddBox";
 
 const Create = () => {
   const [country, setCountry] = useState([]);
@@ -18,7 +20,24 @@ const Create = () => {
     GetData();
   }, []);
 
-  return <div>Create page</div>;
+  return (
+    <div>
+      <Box className={"TopBar"}>
+        <AddBoxIcon />
+        <Typography
+          sx={{ marginLeft: "15px", fontWeight: "bold" }}
+          variant="subtitle2"
+        >
+          Create a football club
+        </Typography>
+      </Box>
+      <Box className={"FormBox"}>
+        <Box className={"FormArea"}>1</Box>
+        <Box className={"FormArea"}>2</Box>
+        <Box className={"FormArea"}>3</Box>
+      </Box>
+    </div>
+  );
 };
 
 export default Create;
